@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Build') {
+            steps {
+                echo 'Building project...'
+            }
+        }
+
+        stage('Deploy to htdocs') {
+            steps {
+                bat 'xcopy /E /I /Y * C:\\xampp\\htdocs\\devops-project'
+            }
+        }
+    }
+}
