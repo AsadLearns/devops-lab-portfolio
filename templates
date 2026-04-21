@@ -12,79 +12,165 @@
             font-family: Arial, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: #fff8f0;
+            background: #fffaf5;
             color: #333;
+            overflow-x: hidden;
         }
 
         header {
-            background: linear-gradient(to right, #ff6b00, #ff9f43);
+            background: linear-gradient(135deg, #ff6b00, #ff9f43);
             color: white;
-            text-align: center;
-            padding: 30px 20px;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         header h1 {
-            font-size: 42px;
-            margin-bottom: 10px;
+            font-size: 28px;
         }
 
-        header p {
-            font-size: 18px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #222;
         }
 
         .hero {
-            text-align: center;
-            padding: 40px 20px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(to right, rgba(255,107,0,0.08), rgba(255,159,67,0.08));
+            flex-wrap: wrap;
         }
 
-        .hero h2 {
-            font-size: 32px;
+        .hero-text {
+            max-width: 520px;
+            animation: slideLeft 1.2s ease;
+        }
+
+        .hero-text h2 {
+            font-size: 52px;
             color: #ff6b00;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            line-height: 1.2;
         }
 
-        .hero p {
+        .hero-text p {
             font-size: 18px;
             color: #555;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .hero-buttons a {
+            display: inline-block;
+            text-decoration: none;
+            background: #ff6b00;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 10px;
+            margin-right: 12px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            box-shadow: 0 6px 14px rgba(255,107,0,0.3);
+        }
+
+        .hero-buttons a:hover {
+            transform: translateY(-3px) scale(1.03);
+            background: #e45c00;
+        }
+
+        .hero-image {
+            animation: floatImage 3s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 420px;
+            max-width: 100%;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 60px 20px 25px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #ff6b00;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #666;
+            font-size: 17px;
         }
 
         .menu {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            padding: 30px 8% 60px;
         }
 
         .card {
             background: white;
-            width: 260px;
-            border-radius: 14px;
+            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            animation: fadeUp 1s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.18);
         }
 
         .card img {
             width: 100%;
-            height: 180px;
+            height: 220px;
             object-fit: cover;
         }
 
-        .card h3 {
-            margin: 15px 0 8px;
-            color: #ff6b00;
+        .card-content {
+            padding: 20px;
+            text-align: center;
         }
 
-        .card p {
-            padding: 0 15px;
+        .card-content h3 {
+            color: #ff6b00;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        .card-content p {
             color: #666;
-            margin-bottom: 10px;
+            line-height: 1.5;
+            margin-bottom: 12px;
         }
 
         .price {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
             margin-bottom: 15px;
             color: #222;
@@ -92,24 +178,100 @@
 
         .btn {
             display: inline-block;
-            margin-bottom: 20px;
-            padding: 10px 18px;
             background: #ff6b00;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s ease;
         }
 
         .btn:hover {
-            background: #e65c00;
+            background: #e45c00;
+            transform: scale(1.05);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px 8% 70px;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-6px);
+        }
+
+        .feature-box h3 {
+            color: #ff6b00;
+            margin-bottom: 10px;
         }
 
         footer {
             text-align: center;
             background: #222;
             color: white;
-            padding: 18px;
-            margin-top: 30px;
+            padding: 22px;
+            margin-top: 20px;
+        }
+
+        @keyframes slideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatImage {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                text-align: center;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .hero-text h2 {
+                font-size: 38px;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
         }
     </style>
 </head>
@@ -117,37 +279,85 @@
 
     <header>
         <h1>🍔 Foodie Hub</h1>
-        <p>Fresh, Tasty and Fast Delivery</p>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#features">Why Us</a>
+        </nav>
     </header>
 
-    <section class="hero">
-        <h2>Welcome to Our Food Website</h2>
-        <p>Enjoy delicious meals made with love and delivered with care.</p>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Delicious Food, Delivered Fast</h2>
+            <p>
+                Experience fresh burgers, cheesy pizzas, creamy pasta and more.
+                Designed as a modern food ordering homepage for your DevOps Docker project.
+            </p>
+            <div class="hero-buttons">
+                <a href="#menu">Explore Menu</a>
+                <a href="#features">Learn More</a>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=80" alt="Food Banner">
+        </div>
     </section>
+
+    <div class="section-title" id="menu">
+        <h2>Our Best Sellers</h2>
+        <p>Freshly prepared meals crafted for taste and speed.</p>
+    </div>
 
     <section class="menu">
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" alt="Burger">
-            <h3>Cheese Burger</h3>
-            <p>Juicy grilled burger with cheese and fresh veggies.</p>
-            <div class="price">₹149</div>
-            <a href="#" class="btn">Order Now</a>
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Burger">
+            <div class="card-content">
+                <h3>Cheese Burger</h3>
+                <p>Juicy grilled patty with cheese, lettuce and our special sauce.</p>
+                <div class="price">₹149</div>
+                <a href="#" class="btn">Order Now</a>
+            </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" alt="Pizza">
-            <h3>Italian Pizza</h3>
-            <p>Loaded with cheese, olives, and fresh toppings.</p>
-            <div class="price">₹249</div>
-            <a href="#" class="btn">Order Now</a>
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80" alt="Pizza">
+            <div class="card-content">
+                <h3>Italian Pizza</h3>
+                <p>Loaded with cheese, olives, herbs and fresh toppings.</p>
+                <div class="price">₹249</div>
+                <a href="#" class="btn">Order Now</a>
+            </div>
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=800&q=80" alt="Pasta">
-            <h3>White Sauce Pasta</h3>
-            <p>Creamy pasta cooked with herbs and vegetables.</p>
-            <div class="price">₹199</div>
-            <a href="#" class="btn">Order Now</a>
+            <img src="https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=80" alt="Pasta">
+            <div class="card-content">
+                <h3>White Sauce Pasta</h3>
+                <p>Creamy pasta with herbs, vegetables and rich white sauce.</p>
+                <div class="price">₹199</div>
+                <a href="#" class="btn">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="section-title" id="features">
+        <h2>Why Choose Us</h2>
+        <p>Better food experience with smooth UI and faster delivery feel.</p>
+    </div>
+
+    <section class="features">
+        <div class="feature-box">
+            <h3>⚡ Fast Delivery</h3>
+            <p>Quick order flow with a clean and user-friendly experience.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🍽 Fresh Food</h3>
+            <p>High-quality dishes prepared with fresh ingredients.</p>
+        </div>
+        <div class="feature-box">
+            <h3>🎨 Modern Design</h3>
+            <p>Attractive visuals, animations, and responsive card-based layout.</p>
         </div>
     </section>
 
