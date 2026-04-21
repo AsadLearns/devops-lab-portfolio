@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Food Website - Home</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Foodie Hub</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            background: #fff5e6;
+        }
+        header {
+            background: #ff6600;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            width: 200px;
+            text-align: center;
+        }
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-    <h1>Welcome to Foodie Hub 🍔</h1>
+    <h1>🍔 Foodie Hub</h1>
+    <p>Delicious food delivered fast 🚀</p>
 </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="menu.html">Menu</a>
-    <a href="order.html">Order</a>
-    <a href="contact.html">Contact</a>
-</nav>
+<div class="menu">
+    <div class="card">
+        <img src="https://source.unsplash.com/200x150/?burger">
+        <h3>Burger</h3>
+        <p>₹150</p>
+    </div>
 
-<div class="container">
-    <h2>Delicious Food Delivered Fast</h2>
-    <p>Order your favorite meals anytime!</p>
+    <div class="card">
+        <img src="https://source.unsplash.com/200x150/?pizza">
+        <h3>Pizza</h3>
+        <p>₹250</p>
+    </div>
+
+    <div class="card">
+        <img src="https://source.unsplash.com/200x150/?pasta">
+        <h3>Pasta</h3>
+        <p>₹200</p>
+    </div>
 </div>
+
+<footer>
+    <p>© 2026 Foodie Hub | DevOps Project by Asad</p>
+</footer>
 
 </body>
 </html>
